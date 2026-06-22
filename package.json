@@ -9,7 +9,9 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "wit": "concurrently 'npm run dev' 'npm run test'"
+    "wit": "concurrently 'npm run dev' 'npm run test'",
+    "test:run": "jest --json --outputFile ./resultz.json -c ./jest.config.js --forceExit",
+    "sendresults": "node sendTestResults.js"
   },
   "dependencies": {
     "concurrently": "^8.2.2",
@@ -21,6 +23,11 @@
     "@fortawesome/react-fontawesome": "^0.1.17"
   },
   "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^29.0.0",
     "@testing-library/react": "^14.1.2",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
